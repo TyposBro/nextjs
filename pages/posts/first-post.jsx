@@ -1,13 +1,26 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 
 export default function FirstPost() {
+  const fb = () => {
+    console.log(`script loaded correctly, window.FB has been populated`);
+    FB.login((response) => {
+      console.log(response);
+    });
+  };
+
   return (
     <>
-    <Head>
-      <title></title>
-    </Head>
+      <Head>
+        <title>First post</title>
+      </Head>
+      <Script
+        src="https://connect.facebook.net/en_US/sdk.js"
+        strategy="lazyOnload"
+        onLoad={fb}
+      />
       <h1>First ever post</h1>
       <Image
         src="/images/profile.jpg" // Route of the image file
