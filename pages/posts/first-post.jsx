@@ -7,9 +7,9 @@ import Layout from "components/layout";
 export default function FirstPost() {
   const fb = () => {
     console.log(`script loaded correctly, window.FB has been populated`);
-    FB.login((response) => {
-      console.log(response);
-    });
+    // FB.login((response) => {
+    //   console.log(response);
+    // });
   };
 
   return (
